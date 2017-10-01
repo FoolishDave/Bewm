@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -45,7 +47,7 @@ public class MenuOption : MonoBehaviour
 
     void GoToOptions()
     {
-        
+
     }
 
     void PlaySound()
@@ -76,7 +78,7 @@ public class MenuOption : MonoBehaviour
 
     void OnMouseExit()
     {
-           GetComponentInChildren<Renderer>().material = OptionUnselected;
+        GetComponentInChildren<Renderer>().material = OptionUnselected;
     }
 
     void OnMouseOver()
@@ -94,11 +96,11 @@ public class MenuOption : MonoBehaviour
             menuController.CurrentState = delayState;
             delayState = MenuController.MenuState.Other;
         }
-        
+
     }
 }
 
-
+#if UNITY_EDITOR
 [CustomEditor(typeof(MenuOption))]
 public class MenuOptionEditor : Editor
 {
@@ -111,9 +113,9 @@ public class MenuOptionEditor : Editor
         script.OptionSelected = (Material)EditorGUILayout.ObjectField("Selected Material:", script.OptionSelected,
             typeof(Material), false);
 
-        script.UsableState = (MenuController.MenuState) EditorGUILayout.EnumPopup("Usable On:", script.UsableState);
-        script.MenuAction = (MenuOption.ActionTypes) EditorGUILayout.EnumPopup("Action:", script.MenuAction);
-        
+        script.UsableState = (MenuController.MenuState)EditorGUILayout.EnumPopup("Usable On:", script.UsableState);
+        script.MenuAction = (MenuOption.ActionTypes)EditorGUILayout.EnumPopup("Action:", script.MenuAction);
+
         if (script.MenuAction == MenuOption.ActionTypes.LoadScene)
         {
             script.SceneToLoad = EditorGUILayout.TextField("Scene To Load:", script.SceneToLoad);
@@ -121,7 +123,8 @@ public class MenuOptionEditor : Editor
 
         if (script.MenuAction == MenuOption.ActionTypes.PlayCameraAnimation || script.MenuAction == MenuOption.ActionTypes.ReverseCameraAnimation)
         {
-            script.StateOptions = (MenuController.MenuState) EditorGUILayout.EnumPopup(script.StateOptions);
+            script.StateOptions = (MenuController.MenuState)EditorGUILayout.EnumPopup(script.StateOptions);
         }
     }
 }
+#endif

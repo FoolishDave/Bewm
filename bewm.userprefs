@@ -1,0 +1,13 @@
+﻿<Properties StartupConfiguration="{240B6FF7-FFAB-1328-0E8D-D51103E53924}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MenuOption.cs">
+    <Files>
+      <File FileName="Assets/Scripts/MenuOption.cs" Line="6" Column="7" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

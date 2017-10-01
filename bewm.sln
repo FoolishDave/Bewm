@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio for Mac
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bewm", "bewm.csproj", "{240B6FF7-FFAB-1328-0E8D-D51103E53924}"
 EndProject
 Global
